@@ -25,7 +25,7 @@ class MailComposerSpec extends ObjectBehavior
         $toEmail = 'example@example.com';
         $toName = 'Example';
 
-        $mail->compose($toEmail, $toName, null, null, null, null)
+        $mail->compose($toEmail, $toName, '', '', [], null)
             ->shouldBeCalled()
             ->willReturn($mail);
 
@@ -37,6 +37,6 @@ class TestMailComposer extends MailComposer
 {
     public function compose($toEmail, $toName)
     {
-        return $this->getMail($toEmail, $toName, null, null, null, null);
+        return $this->getMail($toEmail, $toName, '', '', [], null);
     }
 }
