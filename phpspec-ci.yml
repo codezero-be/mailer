@@ -1,0 +1,24 @@
+suites:
+  codezero_suite:
+    namespace: CodeZero\Mailer
+    src_path: src
+    spec_path: .
+    spec_prefix: spec
+    psr4_prefix: CodeZero\Mailer
+
+extensions:
+  - PhpSpec\Extension\CodeCoverageExtension
+
+code_coverage:
+  format:
+    - html
+    - clover
+  output:
+    html: coverage
+    clover: coverage.clover
+  blacklist:
+    - spec
+    - vendor
+    - example
+  blacklist_files:
+    - src/Laravel/MailerServiceProvider.php
