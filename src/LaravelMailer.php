@@ -45,7 +45,7 @@ class LaravelMailer implements Mailer
 
             // Allow the caller to run additional functions
             // on the $msg SwiftMailer object (cc, bcc, attach, ...)
-            if ($options and is_callable($options)) {
+            if ($options && is_callable($options)) {
                 call_user_func($options, $message);
             }
         });
