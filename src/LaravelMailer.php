@@ -3,7 +3,6 @@
 namespace CodeZero\Mailer;
 
 use Illuminate\Contracts\Mail\MailQueue;
-use Illuminate\Mail\Message;
 
 class LaravelMailer implements Mailer
 {
@@ -38,7 +37,7 @@ class LaravelMailer implements Mailer
      */
     public function send($toEmail, $toName, $subject, $view, array $data = array(), $options = null)
     {
-        $this->mail->queue($view, $data, function (Message $message) use ($toEmail, $toName, $subject, $options) {
+        $this->mail->queue($view, $data, function ($message) use ($toEmail, $toName, $subject, $options) {
 
             $message->to($toEmail, $toName)
                     ->subject($subject);
